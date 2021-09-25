@@ -77,7 +77,7 @@ export default class AddTextpost extends Component {
       score: this.state.score
     };
 
-    TutorialDataService.create(data)
+    TextpostDataService.create(data)
       .then(response => {
         this.setState({
           id: response.data.id,

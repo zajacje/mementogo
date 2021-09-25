@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Switch, Route, BrowserRouter } from "react-router-dom";
+//import * as serviceWorker from "./serviceWorker";
+import AddTextpost from './components/add-textpost.component'
 
 ReactDOM.render(
   <React.StrictMode>
+    
     <App />
+     
   </React.StrictMode>,
   document.getElementById('root')
 );
