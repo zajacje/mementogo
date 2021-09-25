@@ -1,13 +1,28 @@
 import React, { useEffect, useState } from "react";
 import GoogleMapReact from "google-map-react";
+import InputModal from "./InputModal";
 
 export const Navbar = () => {
+	const [toggle, changeToggle] = useState(false);
+	const handleModalClick = () => {};
+
+	useEffect(() => {
+		if (toggle) {
+			<InputModal show={toggle} />;
+		}
+	}, [toggle]);
+
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
-				<a className="navbar-brand" href="#/" onClick={}>
-					Navbar
+				<a className="navbar-brand" href="#/">
+					Input
 				</a>
+				<button
+					type="button"
+					className="btn btn-primary"
+					onClick={() => (toggle ? changeToggle(false) : changeToggle(true))}
+				></button>
 				<button
 					className="navbar-toggler"
 					type="button"
