@@ -1,7 +1,7 @@
 {
-  "name": "MLH Hackathon Node.js Starter",
-  "description": "A hackathon starting point for new Node.js applications",
-  "repository": "https://github.com/MLH/mlh-hackathon-nodejs-starter.git",
+  "name": "mementoGo",
+  "description": "A social media web app that lets users leave an anonymous message at their location",
+  "repository": "https://github.com/zajacje/mementogo.git",
   "logo": "https://avatars1.githubusercontent.com/u/5752708?s=100",
   "keywords": ["nodejs", "javascript"]
 }

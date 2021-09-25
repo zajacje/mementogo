@@ -1,7 +1,7 @@
 {
-  "name": "mlh-hackathon-nodejs-starter",
+  "name": "mementoGo",
   "version": "0.1.0",
-  "description": "A hackathon starting point for new Nodejs applications",
+  "description": "A social media web app that lets users leave an anonymous message at their location",
   "scripts": {
     "start": "nodemon app/index.js",
     "deploy": "NODE_ENV=production node app/index.js"
@@ -9,16 +9,16 @@
   "dependencies": {
     "axios": "^0.21.4",
     "compression": "^1.7.3",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "express": "^4.16.4",
-    "express-handlebars": "^4.0.4",
-    "express-session": "^1.15.6",
+    "express-handlebars": "^4.0.6",
+    "express-session": "^1.17.2",
     "morgan": "^1.9.1",
-    "pg": "^8.2.1",
-    "pg-hstore": "^2.3.2",
-    "sequelize": ">=5.3.0"
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.13"
   }
 }
