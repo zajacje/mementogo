@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 
 function App() {
 	const [location, updateLocation] = useState({});
-	const [toggle, changeToggle] = useState(false);
 
 	useEffect(() => {
 		if ("geolocation" in navigator) {
