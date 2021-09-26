@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import TextpostDataService from "../services/textpost.service";
 
 export default class AddTextpost extends Component {
-    
   constructor(props) {
     super(props);
     this.onChangeDescription = this.onChangeDescription.bind(this);
@@ -17,56 +16,55 @@ export default class AddTextpost extends Component {
       id: null,
       description: "",
       lattitude: props.lng,
-      longitude: props.lat, 
+      longitude: props.lat,
       death: "",
       score: 0,
-      submitted: false
+      submitted: false,
     };
   }
 
-  getLocation(){
-    if("geolocation" in navigator){
-        navigator.geolocation.getCurrentPosition((position) => {
-            this.setState({
-                lattitude: position.coords.latitude,
-                longitude: position.coords.longitude
-
-            })
-        })
+  getLocation() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.setState({
+          lattitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        });
+      });
     } else {
-        console.log("no geo avaialble")
+      console.log("no geo avaialble");
     }
   }
 
   onChangeDescription(e) {
-      this.setState({
-          description: e.target.value
-      });
+    this.setState({
+      description: e.target.value,
+    });
   }
 
   onChangeLattitude(e) {
-      this.setState({
-        lattitude: e.target.value
-      });
-    }
+    this.setState({
+      lattitude: e.target.value,
+    });
+  }
 
-    onChangeLongitude(e) {
-        this.setState({
-          longitude: e.target.value
-        });
-      }
+  onChangeLongitude(e) {
+    this.setState({
+      longitude: e.target.value,
+    });
+  }
 
-    onChangeDeath(e) {
-        this.setState({
-            death: e.target.value
-        });  
-    }
+  onChangeDeath(e) {
+    this.setState({
+      death: e.target.value,
+    });
+  }
 
-    onChangeScore(e) {
-        this.setState({
-            score: e.target.value
-        });
-    }
+  onChangeScore(e) {
+    this.setState({
+      score: e.target.value,
+    });
+  }
 
   saveTextpost() {
     var data = {
@@ -74,22 +72,24 @@ export default class AddTextpost extends Component {
       lattitude: this.state.lattitude,
       longitude: this.state.longitude,
       death: this.state.death,
-      score: this.state.score
+      score: this.state.score,
     };
 
     TextpostDataService.create(data)
-      .then(response => {
+      .then((response) => {
         this.setState({
           id: response.data.id,
-          title: response.data.title,
           description: response.data.description,
-          published: response.data.published,
+          lattitude: response.data.lattitude,
+          longtitude: response.data.longitude,
+          death: response.data.death,
+          score: response.data.score,
 
-          submitted: true
+          submitted: true,
         });
         console.log(response.data);
       })
-      .catch(e => {
+      .catch((e) => {
         console.log(e);
       });
   }
@@ -103,7 +103,7 @@ export default class AddTextpost extends Component {
       score: 0,
       death: "",
 
-      submitted: false
+      submitted: false,
     });
   }
 
@@ -145,7 +145,7 @@ export default class AddTextpost extends Component {
               />
             </div>
 
-            <button onClick={this.saveTutorial} className="btn btn-success">
+            <button onClick={this.saveTextpost} className="btn btn-success">
               Submit
             </button>
           </div>
